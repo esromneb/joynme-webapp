@@ -10,5 +10,6 @@ build/
 
 # ignore specific user settings in Xcode
 xcuserdata
+project.xcworkspace
 
 *.bak
