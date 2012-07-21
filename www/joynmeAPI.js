@@ -98,10 +98,10 @@ function populateWhenReady() {
     // Sleep for 100ms and try again.
     // FIXME: this is polling.  A better way is to set a flag when the dom loads
     // And then only call populate from saveEventData if the page is loaded
-  /*  if (eventDataObject == null) {
+    if (eventDataObject == null) {
         setTimeout("populateWhenReady()", 50);
         return;
-    }*/
+    }
     populate(eventDataObject);
     hideLoadingDiv();
 }
@@ -294,28 +294,9 @@ function refreshMap(msg) {
 }
 $(document).ready(function (e) {
     populateWhenReady();
-    doLogin();
-    // Setup handler so when window resizes, so does the google maps
-    $(window).resize(sizeMapJoynme);
-    sizeMapJoynme();
 	//$('mobileChatLink').href="http://www.google.com";
 	//$("a.mylink").attr("href", "http://google.com");
 	$("#mobileChatLink").attr("href", "http://joynme.com/activity/chat.html?" + getRoToken() );
 	$("#mobileAttendingLink").attr("href", "http://joynme.com/activity/attending.html?" + getRoToken() );
 	$("#mobileRsvpLink").attr("href", "http://joynme.com/activity/rsvp.html?" + getRoToken() );
-});
-jQuery('#resetPW').live('submit', function (event) {
-    //alert($('#resetPW').serialize());
-    $.ajax({
-        type: 'PUT',
-        dataType: 'json',
-        data: $('#resetPW').serialize(),
-        success: function (data) {
-            for (var id in data) {
-                jQuery('#' + id).html(data[id]);
-                alert(data);
-            }
-        }
-    });
-    return false;
 });

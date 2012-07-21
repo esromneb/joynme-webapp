@@ -13,28 +13,12 @@
 
     <link href="css/type.css" rel="stylesheet" type="text/css">
     <title>JoynMe!</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script><!--replace with //ajax.... -->
+    <script src="jquery.min.js" type="text/javascript"></script><!--replace with //ajax.... -->
     <script type="text/javascript" src="joynmeAPI.js"></script>
-    <script type="text/javascript" src="scripts/contact.js"></script>
-    <script type="text/javascript" src="js/strophejs/strophe.min.js"></script>
+  <!--  <script type="text/javascript" src="scripts/contact.js"></script> -->
+<!--    <script type="text/javascript" src="js/strophejs/strophe.min.js"></script> -->
    <!-- <script type="text/javascript" src="scripts/add2home.js"></script>-->
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAz_GOaRx71JwN03eRHTbZhLhdm1N_5ed8&amp;sensor=false"></script>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-29466104-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(
-hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <!--  <script type="text/javascript" src="js/main.js"></script> -->
 </head>
 <body>   
 
@@ -44,11 +28,7 @@ hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </scri
         </section>
     </div>
 
-    <div class="header-decoD no-mobile"></div>
     <div class="header-decoM nodesk"></div>
-    <div class="map no-mobile" id="mapParent">
-        <div id="map_canvas">Please wait while the map loads...</div>
-    </div>
     <div class="site">
 	
 	<div id="downloadJoynMe" class="deskonly1"><!-- default link just opens app to notification screen -->
@@ -76,16 +56,7 @@ hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </scri
            
 <div class="decoration"></div></div>
             <div class="column">
-                <div class="clear"></div>
-               <div id="cap" class="no-mobile">
-                <p class="column-text shadow">
-                    <strong>
-                    <div id="names">Comfirmed attending:</div>
-                       		   <span><ul id="combine"></ul></span>
-                    </strong>
-                </p>
-                </div>             
-                
+                <div class="clear"></div>         
                 
                 
                 <div class="clear"></div>
@@ -137,22 +108,9 @@ hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </scri
                 <script>
 				
 jQuery(window).ready(function(){
-            jQuery(initiate_geolocation);  
+            //jQuery(initiate_geolocation);  
         });  
-   
-        function initiate_geolocation() {  
-            navigator.geolocation.getCurrentPosition(handle_geolocation_query);  
-        }  
-  
-        function handle_geolocation_query(position){  
-          userLat = position.coords.latitude;  
-          userLon = position.coords.longitude;  
-        }  
-		function getDirections() {
-		
-			window.open('http://maps.google.com/maps?saddr=' + userLat + ',' + userLon + '&daddr=' + eventLat + ',' + eventLon); 
-			
-		}
+
 		</script>
           <a href=javascript:getDirections()>
         <div class="directionsB" id="geoEarth"> 
@@ -161,22 +119,6 @@ jQuery(window).ready(function(){
         </div> 
 
         <br>
-        <section class="no-mobile" id="chatSection">
-    
-            <div id="chatter">
-                <div id="chat"></div>
-
-                <div id="entry">
-                    <form id="textForm" onsubmit="return sendMessage(this);">
-                        <input type="text" name="text" id="text"   x-webkit-speech="x-webkit-speech" title="Click on the microphone icon to use speech to text!" placeholder="Write on event chat wall."/>
-                        <input type="submit" id="text_submit" value="Send"/>
-                    </form>
-                </div>
-            </div>
-            <br>
-            <br>
-
-        </section>
         <script>
             function hideAllSections() {
                 $("#directions").hide();
@@ -198,51 +140,17 @@ jQuery(window).ready(function(){
 	    
 	    
 	    $(document).ready(function (e) {
+                          
 		var nav = navigator,
 		isIDevice = (/iphone|ipod|ipad/gi).test(nav.platform);
 		
 		if( isIDevice )
 		{
-		    // build a notification object
-		    var n = new Object();
-		    n.messsage = '';
-		    n.title = '';
-		    n.time = '';
-		    n.payloadId = parseRoTokenGetEventId();
-		    n.type = 'details';
-		    
-		    // encode it
-		    var jsonStr = JSON.stringify(n);
-		    var b64json = btoa(jsonStr);
-		    
-		    // set it as the href of the link
-		    $('#downloadJoynMeLink').attr('href', 'joynmeNotification://?b64json=' + b64json );
-		    
-		    // show the button
-		    $('#downloadJoynMe').show();
-		}
+        }
+                          
 	    });
 	    
-	    // opens the itunes store after 300 ms. if JoynMe is already installed the 
-	    // 300 ms timer will never execute.  If the user has JoynMe, opens it, and then returns 2 browser
-	    // a time based if statement prevents the appstore from opening anyways
-	    function try_to_open_app() {
-		var time = (new Date()).getTime();
-		setTimeout(
-			   function()
-			   {
-				var now = (new Date()).getTime();
-				if(now-time>1500)
-				{
-				 //do nothing
-				}
-				else
-				{
-				 window.location='http://itunes.apple.com/us/app/joynme/id487087882?ls=1&mt=8';
-				}
-			   }
-			   , 300);
-	    }
+
 
         </script>
         <div class="nodesk">
