@@ -1,74 +1,80 @@
 <html>
 
-<title> Tile Test </title>
+	<title> Tile Test </title>
 
-<h1> Tiles </h1>
+	<h1> Tiles </h1>
 
-<style type="text/css">
-li {
-  list-style: none;
-}
+	<style type="text/css">
+		li {
+		  list-style: none;
+		}
 
-li a {
-  text-decoration: none;
-  text-align: left;
-  color: #000;
-  margin: 10px;
-  width: 150px;
-  height: 100px;
-  border: 3px groove #999;
-  background: #7FFFD4;
-  padding: 10px;
-  display: block;
-  float: left;
-}
+		li a {
+		  text-decoration: none;
+		  text-align: left;
+		  color: #000;
+		  margin: 10px;
+		  width: 150px;
+		  height: 100px;
+		  border: 3px groove #999;
+		  background: #7FFFD4;
+		  padding: 10px;
+		  display: block;
+		  float: left;
+		}
 
-*[draggable=true] {
-  -moz-user-select:none;
-  -khtml-user-drag: element;
-  cursor: move;
-}
+		*[draggable=true] {
+		  -moz-user-select:none;
+		  -khtml-user-drag: element;
+		  cursor: move;
+		}
 
-*:-khtml-drag {
-  background-color: rgba(238,238,238, 0.5);
-}
+		*:-khtml-drag {
+		  background-color: rgba(238,238,238, 0.5);
+		}
 
-li a:hover:after {
-  content: ' (drag me)';
-}
+		li a:hover:after {
+		  content: ' (drag me)';
+		}
 
-ul {
-  margin-left: 200px;
-  min-height: 300px;
-}
+		ul {
+		  margin-left: 200px;
+		  min-height: 300px;
+		}
 
-li.over {
-  border-color: #333;
-  background: #ccc;
-}
+		li.over {
+		  border-color: #333;
+		  background: #ccc;
+		}
 
-#bin {
-  background: url(bin.jpg) top right no-repeat;
-  height: 250px;
-  width: 166px;
-  float: left;
-  border: 5px solid #000;
-  position: relative;
-  margin-top: 0;
-}
+		#bin {
+		  background: url(bin.jpg) top right no-repeat;
+		  height: 250px;
+		  width: 166px;
+		  float: left;
+		  border: 5px solid #000;
+		  position: relative;
+		  margin-top: 0;
+		}
+		
+		#tileContainer{
+			width: 700px;
+		}
 
-</style>
+	</style>
 
-<article>
-  <p>Make this into a row instead of column so we can have a box that constrains it and forces it to wrap around.</p>
-  <div id="bin"></div>
-  <ul>
-    <li><a id="one" href="#">event one</a></li>
-    <li><a href="#" id="two">event two</a></li>
-    <li><a href="#" id="three">event three</a></li>
-    <li><a href="#" id="four">event four</a></li>
-    <li><a href="#" id="five">event five</a></li>
-  </ul>
-</article>
+	<article>
+	  <p>Make this into a row instead of column so we can have a box that constrains it and forces it to wrap around.</p>
+	  <div id="bin"></div>
+	  <div id="tileContainer">
+		  <ul>
+			<li><a id="one" href="#">event one</a></li>
+			<li><a href="#" id="two">event two</a></li>
+			<li><a href="#" id="three">event three</a></li>
+			<li><a href="#" id="four">event four</a></li>
+			<li><a href="#" id="five">event five</a></li>
+		  </ul>
+	  </div>
+	</article>
 
 </html>
