@@ -1,15 +1,14 @@
-# Xcode
-build/*
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
+# Suggestion for lines in this file pulled from
+# http://stackoverflow.com/questions/3066698/what-is-the-standard-content-of-gitignore-for-an-iphone-xcode-project
+
+build/
+.DS_Store
+**/*.pbxuser
 *.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-*.xcworkspace
-!default.xcworkspace
+*.mode1v3
+**/*.perspectivev*
+
+# ignore specific user settings in Xcode
 xcuserdata
-profile
-*.moved-aside
+
+*.bak
