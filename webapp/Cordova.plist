@@ -23,9 +23,9 @@
 	<key>BackupWebStorage</key>
 	<true/>
 	<key>ExternalHosts</key>
-	<array/>
-	<key>*</key>
-	<string></string>
+	<array>
+		<string>*</string>
+	</array>
 	<key>Plugins</key>
 	<dict>
 		<key>Device</key>
