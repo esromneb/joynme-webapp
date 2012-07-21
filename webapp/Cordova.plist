@@ -19,7 +19,7 @@
 	<key>AllowInlineMediaPlayback</key>
 	<false/>
 	<key>OpenAllWhitelistURLsInWebView</key>
-	<false/>
+	<true/>
 	<key>BackupWebStorage</key>
 	<true/>
 	<key>ExternalHosts</key>
