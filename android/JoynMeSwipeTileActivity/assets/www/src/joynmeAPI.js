@@ -1,6 +1,6 @@
 //apiBaseUrl = "http://192.168.56.101:8080/dailybread/";
 //apiBaseUrl = "http://localhost:8080/dailybread/";
-apiBaseUrl = "http://dev.joynmenow.com:8080/dailybread/";
+apiBaseUrl = "http://testanddevelopment.joynmenow.com:8080/dailybread/";
 //apiBaseUrl = "http://10.1.10.22:8080/dailbread/";
 userLat = 0;
 userLon = 0;
@@ -13,6 +13,8 @@ chatUserName= 0;
 shortToken= 0; 
 eID= 0;
 
+globalToken = "5c85d387e605833510da20dc71ad39821be2e35b";
+
 function getRoToken() {
     readOnlyToken = location.search;
     readOnlyToken = readOnlyToken.substr(1, readOnlyToken.length);
@@ -20,22 +22,15 @@ function getRoToken() {
     return "MmRjNjUxMDYzLjgzICAg";
 }
 
-function doApiCall(type, url, token) {
-    //alert("type="+type+",  url="+apiBaseUrl+ url+ ",  token="+token);
-    if (type == "GET") {
-        try {
-            inputText = $.parseJSON('{"token":"' + token + '"}')
-        } catch (e) {
-            outputObj.value = "JSON error in JavaScript:\r\n" + e;
-            return;
-        }
-    }
+function doApiCall(type, url, inputText, apiSuccessCallback) {
+    //alert("type="+type+",  url="+apiBaseUrl+ url+ ",  token="+inputText);
+    /*
     var apiSuccessCallback = function (html) {
             saveEventData(html);
-        };
+        };*/
+    
     var apiFailCallback = function (jqXHR, textStatus, errorThrown) {
             alert("Your invitation was not found - Please contact the creator.");
-			window.open ("http://www.joynme.com","_self");
         };
     $.ajax({
         type: type,
@@ -221,20 +216,6 @@ function initializeMap(latIn, lonIn) {
 function getUriVariable(name) {
     if (name = (new RegExp('[?&]' + encodeURIComponent(name) + '=([^&]*)')).exec(location.search)) return decodeURIComponent(name[1]);
 }
-// This measures the left margin of the div id 'mapParent'
-// this div is styled by the class 'map' set in margin.css
-// the width of mapParent:
-// window.width - mapParent.left;
-sizeMapJoynme = function (e) {
-    var mapContainer = document.getElementById("mapParent");
-    var containerLeftMargin = parseInt($(mapContainer).css('left')); // removes the "px" at the end
-    var containerTopMargin = parseInt($(mapContainer).css('bottom'));
-    $(mapContainer).css('width', $(window).width() - containerLeftMargin);
-    $(mapContainer).css('height', $(window).height() - containerTopMargin);
-    var chatContainer = document.getElementById("chatter");
-    var containerHeight = parseInt($(chatContainer).css('height')); // removes the "px" at the end
-    $(chatContainer).css('height', $(window).height() - "365");
-};
 
 
 function parseRoTokenGetShortToken()
@@ -267,10 +248,79 @@ function parseRoTokenAndRequestServer() {
     shortToken = rotArray[0];
     var eventId = rotArray[1];
     //fetch the event information
-    doApiCall('GET', 'event/id/' + eventId, shortToken);
+
+    shortToken = "5c85d387e605833510da20dc71ad39821be2e35b";
+
+    //doApiCall('GET', 'event/id/' + eventId, shortToken);
 }
+
+function loadTileDetails(sel, event) {
+
+//alert( sel );
+    var rel = new Date( event.startTimestamp*1000 ).toRelativeTime();
+
+    $(sel).html("<div class='tileText'><b>" + event.activityName + "</b><br>" + rel + "</div>");
+
+    //alert( event.startTimestamp*1000 );
+
+ 
+
+    //alert( relativeDate(new Date(event.startTimestamp*1000)) );
+      //alert( relativeDate() );
+
+
+    //var d = new Date(now).toRelativeTime();
+    //alert( new Date(now.valueOf() - 500).toString().toRelativeTime() );
+
+}
+
+function loadEvents() {
+
+    
+    var callback = function (o) {
+       //alert(o);
+        //alert(o.eventList.length);
+            var offset = 2;
+            for( i = 0; i < o.eventList.length; i++ )
+            {
+                var event = o.eventList[i];
+                //alert(event.activityName);
+
+                if( i == 2 )
+                    offset = 8;
+
+                if( i == 4 )
+                    offset = 6+8;
+
+                if( i == 6 )
+                    offset = 4+6+8;
+
+                loadTileDetails( '#t' + (i + offset), event );
+
+                //$('#t' + (i + offset) ).html(event.activityName);
+
+
+            }
+
+            //saveEventData(html);
+            //alert(o);
+    };
+
+    var eventId = 10;
+
+    var obj = new Object();
+    obj.token = globalToken;
+    obj.latitude = 37.579413;
+    obj.longitude = -121.728516;
+    obj.limit = 10;
+
+
+    doApiCall('GET', 'event', obj, callback);
+}
+
+
 // Call this function immediately
-parseRoTokenAndRequestServer();
+//parseRoTokenAndRequestServer();
 
 function showAlert() {
     if (eventDataObject == null) {
@@ -283,20 +333,10 @@ function showAlert() {
     //alert("addr: " + addr + "\nlat: " + lat + "\nlong: " + long);	
 }
 
-function refreshMap(msg) {
-    // Set the object to null. the call to populateWhenReady check this
-    // without this line the first call to populateWhenReady is ok but subsequent calls are not
-    eventDataObject = null;
-    parseRoTokenAndRequestServer();
-    showAlert();
-    populateWhenReady();
-    sizeMapJoynme();
-}
+
 $(document).ready(function (e) {
-    populateWhenReady();
+    //populateWhenReady();
 	//$('mobileChatLink').href="http://www.google.com";
 	//$("a.mylink").attr("href", "http://google.com");
-	$("#mobileChatLink").attr("href", "http://joynme.com/activity/chat.html?" + getRoToken() );
-	$("#mobileAttendingLink").attr("href", "http://joynme.com/activity/attending.html?" + getRoToken() );
-	$("#mobileRsvpLink").attr("href", "http://joynme.com/activity/rsvp.html?" + getRoToken() );
+	loadEvents();
 });

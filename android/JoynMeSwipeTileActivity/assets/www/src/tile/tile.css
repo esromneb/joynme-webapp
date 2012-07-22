@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+    .tileText {
+      padding: 4px;
+    }
+=======
+>>>>>>> master
 
     li {
       text-decoration: none;
@@ -9,16 +15,21 @@
       background: #55be8c;
       display: block;
       float: left;
+<<<<<<< HEAD
+	   list-style: none;
+=======
 	  list-style: none;
 	  border-radius: 15px;
+>>>>>>> master
     }
 	
     li a {
       /* text-decoration: none;
       text-align: left;
       color: #000;
-      margin: 10px;
-      width: 140px;
+      margin: 8px;
+      margin-bottom: 0px;
+      width: 142px;
       height: 140px;
       background: #55be8c;
       display: block;
@@ -60,15 +71,15 @@
     }
 	
 	#r0 {
-		width:1300px;
+		width:1500px;
 		overflow: hidden;
 	}
 	#r1 {
-		width:1300px;
+		width:1500px;
 		overflow: hidden;
 	}
 	#r2 {
-		width:1300px;
+		width:1500px;
 		overflow: hidden;
 	}
 	
