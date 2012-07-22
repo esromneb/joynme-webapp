@@ -1,3 +1,7 @@
+    .tileText {
+      padding: 4px;
+    }
+
     li {
       text-decoration: none;
       text-align: left;
@@ -8,7 +12,7 @@
       background: #55be8c;
       display: block;
       float: left;
-	  list-style: none;
+	   list-style: none;
     }
 
     li a {
@@ -49,14 +53,14 @@
     }
 	
 	#r0 {
-		width:1300px;
+		width:1500px;
 		overflow: hidden;
 	}
 	#r1 {
-		width:1300px;
+		width:1500px;
 		overflow: hidden;
 	}
 	#r2 {
-		width:1300px;
+		width:1500px;
 		overflow: hidden;
 	}

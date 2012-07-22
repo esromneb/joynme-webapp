@@ -254,17 +254,39 @@ function parseRoTokenAndRequestServer() {
     //doApiCall('GET', 'event/id/' + eventId, shortToken);
 }
 
+function loadTileDetails(sel, event) {
+
+//alert( sel );
+    $(sel).html("<div class='tileText'><b>" + event.activityName + "</b><br>" + event.start + "</div>");
+
+}
+
 function loadEvents() {
 
     
     var callback = function (o) {
        //alert(o);
         //alert(o.eventList.length);
+            var offset = 2;
             for( i = 0; i < o.eventList.length; i++ )
             {
                 var event = o.eventList[i];
                 //alert(event.activityName);
-                $('#t' + i ).html(event.activityName);
+
+                if( i == 2 )
+                    offset = 8;
+
+                if( i == 4 )
+                    offset = 6+8;
+
+                if( i == 6 )
+                    offset = 4+6+8;
+
+                loadTileDetails( '#t' + (i + offset), event );
+
+                //$('#t' + (i + offset) ).html(event.activityName);
+
+
             }
 
             //saveEventData(html);
