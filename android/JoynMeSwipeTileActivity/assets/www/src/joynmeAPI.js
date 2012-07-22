@@ -264,7 +264,7 @@ function loadEvents() {
             {
                 var event = o.eventList[i];
                 //alert(event.activityName);
-                $('#t' + (i+1) ).html(event.activityName);
+                $('#t' + i ).html(event.activityName);
             }
 
             //saveEventData(html);
