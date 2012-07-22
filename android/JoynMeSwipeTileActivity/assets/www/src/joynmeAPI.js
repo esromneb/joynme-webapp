@@ -13,6 +13,8 @@ chatUserName= 0;
 shortToken= 0; 
 eID= 0;
 
+globalEvent = new Array();
+
 globalToken = "5c85d387e605833510da20dc71ad39821be2e35b";
 
 function getRoToken() {
@@ -256,21 +258,9 @@ function parseRoTokenAndRequestServer() {
 
 function loadTileDetails(sel, event) {
 
-//alert( sel );
     var rel = new Date( event.startTimestamp*1000 ).toRelativeTime();
-
     $(sel).html("<div class='tileText'><b>" + event.activityName + "</b><br>" + rel + "</div>");
 
-    //alert( event.startTimestamp*1000 );
-
- 
-
-    //alert( relativeDate(new Date(event.startTimestamp*1000)) );
-      //alert( relativeDate() );
-
-
-    //var d = new Date(now).toRelativeTime();
-    //alert( new Date(now.valueOf() - 500).toString().toRelativeTime() );
 
 }
 
@@ -296,6 +286,8 @@ function loadEvents() {
                     offset = 4+6+8;
 
                 loadTileDetails( '#t' + (i + offset), event );
+
+                globalEvent[i + offset] = event;
 
                 //$('#t' + (i + offset) ).html(event.activityName);
 
