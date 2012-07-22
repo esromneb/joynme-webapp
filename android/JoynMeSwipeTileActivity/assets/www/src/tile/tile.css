@@ -10,12 +10,14 @@
       color: #000;
       margin: 10px;
       width: 140px;
-      height: 140px;
-      background: #55be8c;
+      height: 134px;
+      /* background: #55be8c; */
+      background: rgba(85, 190, 140, 0.2);
       display: block;
       float: left;
-	  list-style: none;
-	  border-radius: 15px;
+	    list-style: none;
+	    border-radius: 15px;
+
     }
 	
     li a {
