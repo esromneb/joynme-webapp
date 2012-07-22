@@ -40,10 +40,13 @@
 	
 	#r0 {
 		width:1300px;
+		overflow: hidden;
 	}
 	#r1 {
 		width:1300px;
+		overflow: hidden;
 	}
 	#r2 {
 		width:1300px;
+		overflow: hidden;
 	}
