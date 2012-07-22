@@ -1,0 +1,41 @@
+li {
+      list-style: none;
+    }
+
+    li a {
+      text-decoration: none;
+      text-align: left;
+      color: #000;
+      margin: 10px;
+      width: 90px;
+      height: 90px;
+      border: 3px #000;
+      background: #55be8c;
+      padding: 8px;
+      display: block;
+      float: left;
+    }
+
+    *[draggable=true] {
+      -moz-user-select:none;
+      -khtml-user-drag: element;
+      cursor: move;
+    }
+
+    *:-khtml-drag {
+      background-color: rgba(238,238,238, 0.5);
+    }
+
+    li a:hover:after {
+      content: ' (drag me)';
+    }
+
+    li.over {
+      border-color: #333;
+      background: #ccc;
+    }
+
+    
+    #tileContainer{
+      width: 320px;
+    }
