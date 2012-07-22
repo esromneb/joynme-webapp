@@ -82,3 +82,8 @@
 .ui-btn-down-r { border: 1px solid #225377; background: #79ae21; font-weight: bold; color: #fff; text-shadow: 0 -1px 1px #225377; background-image: -moz-linear-gradient(top, #bc770f, #e6590c); background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #bc770f),color-stop(1, #e6590c));   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#bc770f', EndColorStr='#e6590c')"; }
 .ui-btn-down-r a.ui-link-inherit { color: #fff; }
 .ui-btn-up-r, .ui-btn-hover-r, .ui-btn-down-r { font-family: Helvetica, Arial, sans-serif; }
+
+
+.clear{
+clear:both;
+}
