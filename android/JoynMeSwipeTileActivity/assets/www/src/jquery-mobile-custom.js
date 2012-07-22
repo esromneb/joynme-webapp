@@ -11,6 +11,35 @@ slideToPanel('r2', 1, 0);
 glow();
 });
 
+function isETile( num )
+{
+	if( num == 2 || num == 3 || num == 10 || num == 11 || num == 18 || num == 19 )
+		return true;
+
+	return false;
+}
+
+function bindEvent( sel, num )
+{
+	if( isETile( num ) )
+	{
+		var event = globalEvent[num];
+		//alert( num );
+		//alert( globalEvent[num].activityName );
+		var base = Math.floor(num/8)*8;
+		var rsvp = "#t" + base;
+		var details = "#t" + (base+4);
+		var other = "#t" + (base+6);
+
+		//alert( rsvp );
+		var rel = new Date( event.startTimestamp*1000 ).toRelativeTime();
+    	$(rsvp).html("<div class='tileText'><b>Will you attend this event?</b><br><br><input type='button' value='Yes!'> or <input type='button' value='No :('>" + "</div>");
+    	$(details).html("<div class='tileText'><b>" + event.start + "</b><br>"  + event.numberAttending + " attending<br>" + event.numberInvited + " invited"  + "</div>");
+
+	}
+}
+
+
 $(function(){
 
 
@@ -26,6 +55,8 @@ $(function(){
 				var $li = $(this);
 				var tileId = e.target.id;
 				var tileNum = parseInt(tileId.replace('t',''));
+
+				bindEvent( tileId, tileNum );
 				
 				var currentRow = "r"+Math.floor(tileNum/8);
 
@@ -71,6 +102,8 @@ $(function(){
 				var $li = $(this);
 				var tileId = e.target.id;
 				var tileNum = parseInt(tileId.replace('t',''));
+
+				bindEvent( tileId, tileNum );
 				
 				var currentRow = "r"+Math.floor(tileNum/8);
 				
