@@ -8,7 +8,7 @@ $(function(){
 slideToPanel('r0', 1, 0);
 slideToPanel('r1', 1, 0);
 slideToPanel('r2', 1, 0);
-
+glow();
 });
 
 $(function(){
@@ -146,4 +146,71 @@ function slideToPanel(row, targetPanel, timeIn){
 		$(row).animate({marginLeft: "-960px",}, time );
 	}
 }
+
+function glow(){
+	//alert('glow');
+	var rand = (Math.random()*0.8) + 0.2;
+	//alert(rand);
+	$("#t2").animate({
+        "backgroundColor": "rgba(85, 190, 140, "+rand+")"
+    }, 1500);
+	
+	rand = (Math.random()*0.8) + 0.2;
+	
+	$("#t3").animate({
+        "backgroundColor": "rgba(85, 190, 140, "+rand+")"
+    }, 1500);
+	
+	rand = (Math.random()*0.8) + 0.2;
+	
+	$("#t10").animate({
+        "backgroundColor": "rgba(85, 190, 140, "+rand+")"
+    }, 1500);
+	
+	rand = (Math.random()*0.8) + 0.2;
+	
+	$("#t11").animate({
+        "backgroundColor": "rgba(85, 190, 140, "+rand+")"
+    }, 1500);
+	
+	rand = (Math.random()*0.8) + 0.2;
+
+	$("#t18").animate({
+        "backgroundColor": "rgba(85, 190, 140, "+rand+")"
+    }, 1500);rand = (Math.random()*0.8) + 0.2;
+		
+	rand = (Math.random()*0.8) + 0.2;
+	
+	$("#t19").animate({
+        "backgroundColor": "rgba(85, 190, 140, "+rand+")"
+    }, 1500);
+	
+	setTimeout("glow()", 1000);
+	/*
+	$("r3").animate({
+        "background": "rgba(85, 190, 140, 0.4)";
+    }, 1000);
+	setTimeout("glow()", 0);
+	$("r3").animate({
+        "background": "rgba(85, 190, 140, 0.6)";
+    }, 1000);
+	setTimeout("glow()", 0);
+	$("r3").animate({
+        "background": "rgba(85, 190, 140, 0.8)";
+    }, 1000);
+	setTimeout("glow()", 0);
+	$("r3").animate({
+        "background": "rgba(85, 190, 140, 0.6)";
+    }, 1000);
+	setTimeout("glow()", 0);
+	$("r3").animate({
+        "background": "rgba(85, 190, 140, 0.4)";
+    }, 1000);
+	setTimeout("glow()", 0);
+	$("r3").animate({
+        "background": "rgba(85, 190, 140, 0.2)";
+    }, 1000);
+	setTimeout("glow()", 0);*/
+}
+
 // to get what was clicked on, look at function(event) -> event is important because that what was clicked on. not $li. event.target.id (get the id of the targeted thing)
