@@ -34,7 +34,10 @@ $(function(){
 				// insert swipe div into list item
 				$li.prepend($divSwipe);
 				
-				slideToPanel(currentRow, tileNum);
+				slideToPanel(currentRow, 0);
+				slideToPanel(currentRow, 3);
+				slideToPanel(currentRow, 1);
+				slideToPanel(currentRow, 2);
 
 				//$(name).animate({
 				//    marginLeft: "3in",
@@ -104,17 +107,20 @@ $(function(){
 })
 
 function slideToPanel(row, targetPanel){
+	row = '#'+row;
+	
 	if (targetPanel == 0){
-		row.animate({marginLeft: "-320px",}, 400 );
+		$(row).animate({marginRight: "-320px",}, 0 );	
+		$(row).animate({marginLeft: "-320px",}, 400 );
 	}
 	else if (targetPanel == 1){
-		row.animate({marginLeft: "0px",}, 400 );
+		$(row).animate({marginLeft: "0px",}, 400 );
 	}
 	else if (targetPanel == 2){
-		row.animate({marginLeft: "320px",}, 400 );
+		$(row).animate({marginLeft: "320px",}, 400 );
 	}
 	else if (targetPanel == 3){
-		row.animate({marginLeft: "640px",}, 400 );
+		$(row).animate({marginLeft: "640px",}, 400 );
 	}
 }
 // to get what was clicked on, look at function(event) -> event is important because that what was clicked on. not $li. event.target.id (get the id of the targeted thing)
