@@ -21,6 +21,32 @@ function isETile( num )
 
 function bindEvent( sel, num )
 {
+
+
+$("#t2").stop(true);
+	
+	$("#t3").stop(true);
+	
+
+	
+	$("#t10").stop(true);
+	
+
+	
+	$("#t11").stop(true);
+	
+
+
+	$("#t18").stop(true);
+		
+
+	
+	$("#t19").stop(true);
+
+
+
+
+
 	if( isETile( num ) )
 	{	
 		$("#"+sel).stop(true).animate({
@@ -39,7 +65,7 @@ function bindEvent( sel, num )
 		//alert( rsvp );
 		var rel = new Date( event.startTimestamp*1000 ).toRelativeTime();
     	$(rsvp).html("<div class='tileText'><b>Will you attend this event?</b><br><br><input type='button' value='Yes!'> or <input type='button' value='No :('>" + "</div>");
-    	$(details).html("<div class='tileText'><b>" + event.start + "</b><br>"  + event.numberAttending + " attending<br>" + event.numberInvited + " invited"  + "</div>");
+    	$(details).html("<div class='tileText'><b>" + event.activityName + "<br>" + event.start + "</b><br>"  + event.numberAttending + " attending<br>" + event.numberInvited + " invited"  + "</div>");
 
 	}
 }
