@@ -257,7 +257,20 @@ function parseRoTokenAndRequestServer() {
 function loadTileDetails(sel, event) {
 
 //alert( sel );
-    $(sel).html("<div class='tileText'><b>" + event.activityName + "</b><br>" + event.start + "</div>");
+    var rel = new Date( event.startTimestamp*1000 ).toRelativeTime();
+
+    $(sel).html("<div class='tileText'><b>" + event.activityName + "</b><br>" + rel + "</div>");
+
+    //alert( event.startTimestamp*1000 );
+
+ 
+
+    //alert( relativeDate(new Date(event.startTimestamp*1000)) );
+      //alert( relativeDate() );
+
+
+    //var d = new Date(now).toRelativeTime();
+    //alert( new Date(now.valueOf() - 500).toString().toRelativeTime() );
 
 }
 
