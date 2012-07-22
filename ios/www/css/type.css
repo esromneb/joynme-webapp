@@ -1,0 +1,153 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body, form, fieldset, p, div, h1, h2, h3, h4, h5, h6 {
+	-webkit-text-size-adjust:none;
+	margin: auto;
+}
+
+p{
+	line-height:20px;
+	color:#5b5b5b;
+	font-size:16px;
+}
+span{
+	margin-top:-15px;
+	line-height:20px;
+	color:#5b5b5b;
+	font-size:16px;
+}
+
+h1,h2,h3,h4,h5,h6{
+	color:#5b5b5b;
+	padding-bottom:10px;
+}
+
+.image-heading{
+	padding-bottom:10px;
+	padding-top:5px;
+}
+
+a{
+	color:#24adef;
+	text-decoration:none;
+}
+
+.shadow{
+	text-shadow:0px 1px 0px #ffffff;
+}
+
+.navigation a{
+	width:20%;
+	float:left;
+	color:#696969;
+	text-decoration:none;
+	text-align:center;
+	padding-top:3px;
+	padding-bottom:3px;
+}
+
+.under-icon-text{
+	margin-top:-5px;
+	font-family:'PT-Sans', sans-serif;
+	display:block;
+	font-size:10px;
+	font-style:normal;
+}
+
+.selected{
+	background-color:rgba(255,255,255,0.1);
+}
+
+.under-slider-heading{
+	font-family:'PT-Sans', sans-serif;
+	width:100%;
+	text-align:center;
+	font-size:24px;
+	font-weight:bold;
+	color:#55be8c;
+	margin-bottom:5px;
+}
+
+.under-slider-description{
+	font-family:'PT-Sans', sans-serif;
+	color:#5B5B5B;
+	width:100%;
+	text-align:center;
+	font-style:italic;
+	font-size:14px;
+	line-height:20px;
+	margin-bottom:5px;
+}
+
+.column{
+	padding-bottom:20px;
+}
+
+.column-text{
+	float:left;
+	padding-bottom:20px;
+}
+
+
+.column-text strong{
+	margin-top:-15px;
+	display:block;
+	padding-top:20px;
+	padding-bottom:0px;
+	font-size:15px!important;
+}
+#address {
+	font-family:'PT-Sans', sans-serif;
+	color:#5B5B5B;
+	width:100%;
+	text-align:center;
+	font-style:italic;
+	font-size:12px;
+	line-height:20px;
+	margin-bottom:0px;
+}
+
+.full-width{
+	width:100%;
+	padding-bottom:20px;
+}
+
+
+
+.copyright{
+	font-size:10px;
+	text-align:left;
+	padding-left:5px;
+	padding-bottom:10px;
+	padding-top:10px;
+	color:#FFFFFF!important;
+}
+
+
+.last-item{
+	padding-bottom:0px!important;
+	margin-bottom:0px!important;
+}
+
+.attendingNames {
+	margin-left:20px;
+	padding-right:40px;}
+
+
+
+
+/*/////////////////////////*/
+/*Highlights and Selections*/
+/*/////////////////////////*/
+
+/*Orange Highlights And Selections*/
+
+.highlight{
+	padding-bottom:15px;	
+}
+
+.highlight-orange{ 	background-color:#e34e47;	color:#FFFFFF;	text-shadow:none;	margin-top:5px; padding:2px;}
+.highlight-green{ 	background-color:#518900;	color:#FFFFFF;	text-shadow:none;	margin-top:5px; padding:2px;}
+.highlight-yellow{ 	background-color:#ffd100;	text-shadow:none;					margin-top:5px; padding:2px;}
+.highlight-gray{ 	background-color:#424242;	color:#FFFFFF;	text-shadow:none;	margin-top:5px; padding:2px;}
