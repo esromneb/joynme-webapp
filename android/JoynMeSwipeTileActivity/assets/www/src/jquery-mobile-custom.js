@@ -22,7 +22,12 @@ function isETile( num )
 function bindEvent( sel, num )
 {
 	if( isETile( num ) )
-	{
+	{	
+		$("#"+sel).stop(true).animate({
+        "backgroundColor": "rgba(85, 190, 140, 1.0)"
+		}, 0);
+		
+		//alert("#"+sel);
 		var event = globalEvent[num];
 		//alert( num );
 		//alert( globalEvent[num].activityName );
