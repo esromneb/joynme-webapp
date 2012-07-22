@@ -12,6 +12,10 @@ $(function(){
 				// reference the just swiped list item
 				var $li = $(this);
 				var tileId = e.target.id;
+				var tileNum = parseInt(tileId.replace('t',''));
+				
+				var currentRow = "r"+Math.floor(tileNum/8);
+				//alert(currentRow);
 
 				// remove all swipe divs first
 				$('.divSwipe').remove();
@@ -29,12 +33,12 @@ $(function(){
 								});
 				// insert swipe div into list item
 				$li.prepend($divSwipe);
+				
+				slideToPanel(currentRow, tileNum);
 
-				var name = '#t0';
-
-				$(name).animate({
-				    marginLeft: "3in",
-			  	}, 400 );
+				//$(name).animate({
+				//    marginLeft: "3in",
+			  	//}, 400 );
 
 				// insert buttons into divSwipe
 
@@ -75,7 +79,8 @@ $(function(){
 				// insert swipe div into list item
 				$li.prepend($divSwipe);
 
-				var name = '#r1';
+				var row = '#r1';
+				var currentPanel = 1;
 
 				$(name).animate({
 				    marginLeft: "-3in",
@@ -98,4 +103,18 @@ $(function(){
 
 })
 
+function slideToPanel(row, targetPanel){
+	if (targetPanel == 0){
+		row.animate({marginLeft: "-320px",}, 400 );
+	}
+	else if (targetPanel == 1){
+		row.animate({marginLeft: "0px",}, 400 );
+	}
+	else if (targetPanel == 2){
+		row.animate({marginLeft: "320px",}, 400 );
+	}
+	else if (targetPanel == 3){
+		row.animate({marginLeft: "640px",}, 400 );
+	}
+}
 // to get what was clicked on, look at function(event) -> event is important because that what was clicked on. not $li. event.target.id (get the id of the targeted thing)
