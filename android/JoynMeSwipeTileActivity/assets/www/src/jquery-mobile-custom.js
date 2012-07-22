@@ -1,4 +1,12 @@
 $(function(){
+//init page
+slideToPanel('r0', 1, 0);
+slideToPanel('r1', 1, 0);
+slideToPanel('r2', 1, 0);
+
+});
+
+$(function(){
 
 
 
@@ -15,7 +23,7 @@ $(function(){
 				var tileNum = parseInt(tileId.replace('t',''));
 				
 				var currentRow = "r"+Math.floor(tileNum/8);
-				//alert(currentRow);
+				alert(currentRow);
 
 				// remove all swipe divs first
 				$('.divSwipe').remove();
@@ -34,15 +42,8 @@ $(function(){
 				// insert swipe div into list item
 				$li.prepend($divSwipe);
 				
-				slideToPanel(currentRow, 0);
-				slideToPanel(currentRow, 3);
-				slideToPanel(currentRow, 1);
-				slideToPanel(currentRow, 2);
-
-				//$(name).animate({
-				//    marginLeft: "3in",
-			  	//}, 400 );
-
+				slideToPanel(currentRow, Math.round(tileNum/2));
+				
 				// insert buttons into divSwipe
 
 				//$divSwipe.prepend($myBtn01,$myBtn02).show(1000);
@@ -58,7 +59,7 @@ $(function(){
 				});
 			});
 			
-			// copied above and editing it now lol
+			// FIXME copy from above, except reverse the order of the slideToPanel() call!
 			
 			$('ul li').unbind('swipeleft').bind('swipeleft', function(e){
 				// reference the just swiped list item
@@ -106,20 +107,26 @@ $(function(){
 
 })
 
-function slideToPanel(row, targetPanel){
+function slideToPanel(row, targetPanel, timeIn){
 	row = '#'+row;
+	var time = 400;
+	
+	if (timeIn != undefined){
+		time = timeIn;
+	}
+	
 	
 	if (targetPanel == 0){
-		$(row).animate({marginLeft: "0px",}, 400 );	
+		$(row).animate({marginLeft: "0px",}, time );	
 	}
 	else if (targetPanel == 1){
-		$(row).animate({marginLeft: "-320px",}, 400 );	
+		$(row).animate({marginLeft: "-320px",}, time );	
 	}
 	else if (targetPanel == 2){
-		$(row).animate({marginLeft: "-640px",}, 400 );	
+		$(row).animate({marginLeft: "-640px",}, time );	
 	}
 	else if (targetPanel == 3){
-		$(row).animate({marginLeft: "-960px",}, 400 );	
+		$(row).animate({marginLeft: "-960px",}, time );	
 	}
 }
 // to get what was clicked on, look at function(event) -> event is important because that what was clicked on. not $li. event.target.id (get the id of the targeted thing)
