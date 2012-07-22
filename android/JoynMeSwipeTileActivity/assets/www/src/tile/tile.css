@@ -1,9 +1,8 @@
-<<<<<<< HEAD
+
     .tileText {
       padding: 4px;
     }
-=======
->>>>>>> master
+
 
     li {
       text-decoration: none;
@@ -15,12 +14,8 @@
       background: #55be8c;
       display: block;
       float: left;
-<<<<<<< HEAD
-	   list-style: none;
-=======
 	  list-style: none;
 	  border-radius: 15px;
->>>>>>> master
     }
 	
     li a {
