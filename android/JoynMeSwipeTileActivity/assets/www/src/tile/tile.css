@@ -1,4 +1,4 @@
-li {
+    li {
       list-style: none;
     }
 
@@ -7,11 +7,9 @@ li {
       text-align: left;
       color: #000;
       margin: 10px;
-      width: 90px;
-      height: 90px;
-      border: 3px #000;
+      width: 140px;
+      height: 140px;
       background: #55be8c;
-      padding: 8px;
       display: block;
       float: left;
     }
@@ -37,5 +35,9 @@ li {
 
     
     .tileContainer{
-      /*width: 320px;*/
+      width: 1300px;
+    }
+	
+    #r1 {
+      margin-left:-320px;
     }
