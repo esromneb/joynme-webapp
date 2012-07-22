@@ -35,9 +35,15 @@
 
     
     .tileContainer{
-      width: 1300px;
+     
     }
 	
-    #r1 {
-      margin-left:-320px;
-    }
+	#r0 {
+		width:1300px;
+	}
+	#r1 {
+		width:1300px;
+	}
+	#r2 {
+		width:1300px;
+	}
