@@ -28,12 +28,11 @@ $(function(){
 				// insert swipe div into list item
 				$li.prepend($divSwipe);
 
-				var name = 'r1';
+				var name = '#r1';
 
-				$(".r1").animate({
-				    opacity: 0.4,
-				    marginLeft: "10in",
-			  	}, 1500 );
+				$(name).animate({
+				    marginLeft: "3in",
+			  	}, 400 );
 
 				// insert buttons into divSwipe
 

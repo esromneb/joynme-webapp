@@ -36,6 +36,6 @@ li {
     }
 
     
-    #tileContainer{
+    .tileContainer{
       width: 320px;
     }
