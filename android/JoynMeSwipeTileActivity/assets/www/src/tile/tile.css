@@ -1,9 +1,18 @@
     li {
-      list-style: none;
+      text-decoration: none;
+      text-align: left;
+      color: #000;
+      margin: 10px;
+      width: 140px;
+      height: 140px;
+      background: #55be8c;
+      display: block;
+      float: left;
+	  list-style: none;
     }
 
     li a {
-      text-decoration: none;
+      /* text-decoration: none;
       text-align: left;
       color: #000;
       margin: 8px;
@@ -12,7 +21,7 @@
       height: 140px;
       background: #55be8c;
       display: block;
-      float: left;
+      float: left; */
     }
 
     *[draggable=true] {
@@ -41,10 +50,13 @@
 	
 	#r0 {
 		width:1300px;
+		overflow: hidden;
 	}
 	#r1 {
 		width:1300px;
+		overflow: hidden;
 	}
 	#r2 {
 		width:1300px;
+		overflow: hidden;
 	}
