@@ -1,3 +1,8 @@
+touchMove = function(event) {
+// Prevent scrolling on this element
+event.preventDefault();
+}
+
 $(function(){
 //init page
 slideToPanel('r0', 1, 0);
