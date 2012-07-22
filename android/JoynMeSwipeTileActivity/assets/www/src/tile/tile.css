@@ -1,8 +1,4 @@
     li {
-      list-style: none;
-    }
-
-    li a {
       text-decoration: none;
       text-align: left;
       color: #000;
@@ -12,6 +8,19 @@
       background: #55be8c;
       display: block;
       float: left;
+	  list-style: none;
+    }
+
+    li a {
+      /* text-decoration: none;
+      text-align: left;
+      color: #000;
+      margin: 10px;
+      width: 140px;
+      height: 140px;
+      background: #55be8c;
+      display: block;
+      float: left; */
     }
 
     *[draggable=true] {
