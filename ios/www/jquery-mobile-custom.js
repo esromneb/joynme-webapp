@@ -27,8 +27,18 @@ $(function(){
 								});
 				// insert swipe div into list item
 				$li.prepend($divSwipe);
+
+				var name = 'r1';
+
+				$(".r1").animate({
+				    opacity: 0.4,
+				    marginLeft: "10in",
+			  	}, 1500 );
+
 				// insert buttons into divSwipe
-				$divSwipe.prepend($myBtn01,$myBtn02).show(100);
+
+				//$divSwipe.prepend($myBtn01,$myBtn02).show(1000);
+
 				// add escape route for swipe menu
 				$('body').bind('tap', function(e){
 					// if the triggering object is a button, fire it's tap event
@@ -39,19 +49,5 @@ $(function(){
 					$('body').unbind('tap');
 				});
 			});
-		
-
-
-
-		function getUrlVars() {
-			var vars = [], hash;
-			var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-			for(var i = 0; i < hashes.length; i++) {
-				hash = hashes[i].split('=');
-				vars.push(hash[0]);
-				vars[hash[0]] = hash[1];
-			}
-			return vars;
-		}
 
 })
