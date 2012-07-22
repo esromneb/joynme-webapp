@@ -1,3 +1,4 @@
+
     li {
       text-decoration: none;
       text-align: left;
@@ -10,7 +11,7 @@
       float: left;
 	  list-style: none;
     }
-
+	
     li a {
       /* text-decoration: none;
       text-align: left;
@@ -42,6 +43,10 @@
       background: #ccc;
     }
 	
+	li.normal{
+		box-shadow: 0px 0px 20px #000;
+	}
+	
 	li.huge{
 		width: 300px;
 	}
@@ -51,7 +56,6 @@
 	}
     
     .tileContainer{
-     
     }
 	
 	#r0 {
@@ -65,4 +69,9 @@
 	#r2 {
 		width:1300px;
 		overflow: hidden;
+	}
+	
+	body{
+		background-image:url(../images/background/bg.png);
+		background-repeat:repeat;
 	}
