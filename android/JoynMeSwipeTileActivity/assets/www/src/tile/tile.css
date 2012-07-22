@@ -41,7 +41,14 @@
       border-color: #333;
       background: #ccc;
     }
-
+	
+	li.huge{
+		width: 300px;
+	}
+	
+	li.hidden{
+		display: none;
+	}
     
     .tileContainer{
      
