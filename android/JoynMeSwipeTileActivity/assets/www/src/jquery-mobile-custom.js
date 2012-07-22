@@ -81,7 +81,7 @@ $(function(){
 			// remove any existing swipe areas
 			$('.divSwipe').remove();
 			// add swipe event to the list item, removing it first (if it exists)
-			$('ul li').unbind('swiperight').bind('swiperight click', function(e){ // FIXME remove click for the phone
+			$('ul li').unbind('swiperight').bind('swiperight', function(e){ // FIXME remove click for the phone
 				// reference the just swiped list item
 				var $li = $(this);
 				var tileId = e.target.id;
